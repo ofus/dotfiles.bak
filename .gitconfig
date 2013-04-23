@@ -76,3 +76,9 @@
 
 [push]
 	default = simple
+[user]
+	name = Andrew Joseph
+	email = andrew@aljweb.com
+[gui]
+	recentrepo = /Users/ofus/src/diaspora
+	recentrepo = /Users/ofus/src/zms
