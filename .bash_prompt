@@ -35,6 +35,8 @@ else
 	RESET="\033[m"
 fi
 
+BIWHITE='\e[1;97m'
+
 export MAGENTA
 export ORANGE
 export GREEN
@@ -51,5 +53,5 @@ function parse_git_branch() {
 	git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-export PS1="\[${BOLD}${MAGENTA}\]\u \[$WHITE\]at \[$ORANGE\]\h \[$WHITE\]in \[$GREEN\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\]\n\$ \[$RESET\]"
+export PS1="\[${BOLD}${MAGENTA}\]\u \[$BIWHITE\]at \[$ORANGE\]\h \[$BIWHITE\]in \[$GREEN\]\w\[$BIWHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$RESET\]\[$BIWHITE\]\n\$ \[$RESET\]"
 export PS2="\[$ORANGE\]→ \[$RESET\]"
